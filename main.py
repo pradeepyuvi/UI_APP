@@ -4,7 +4,7 @@ import flet
 from flet import *
 from flet import colors, dropdown, icons, padding
 
-from Views import home, BA, PDIdownandexc, PDIHome, PDI_DATA
+from Views import home, BA, PDIdownandexc, PDIHome
 
 
 class Main(UserControl):
@@ -134,23 +134,7 @@ def main(page: Page):
                 )
             )
 
-        if page.route == "PDI":
-    
-            page.views.append(
-                View(
-                    "/PDI",
-                    [
-                        PDI_DATA.PDI_DATA(
-                            username=username, password=password)
-                    ],
-                    appbar=AppBar(title=Text(
-                        f"PDI  logined by {username}"), actions=[IconButton(icon=icons.POWER_SETTINGS_NEW, on_click=logout)]),
-                    horizontal_alignment="center",
-                    vertical_alignment="center",
-                    padding=padding.symmetric(horizontal=200),
-                )
-            )
-
+        
         page.update()
 
     def onViewPop(e):
